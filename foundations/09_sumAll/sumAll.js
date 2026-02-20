@@ -5,14 +5,23 @@ const sumAll = function (start, end) {
         return 'ERROR';
     }
 
-    if (end > start) {
-        for (let i = start; i <= end; i++) {
-            sum += i;
-        }
-    } else {
-        for (let i = end; i <= start; i++) {
-            sum += i;
-        }
+    // if (end > start) {
+    //     for (let i = start; i <= end; i++) {
+    //         sum += i;
+    //     }
+    // } else {
+    //     for (let i = end; i <= start; i++) {
+    //         sum += i;
+    //     }
+    // }
+
+    // Tried the destructuring syntax
+    if (start > end) {
+        [start, end] = [end, start]
+    }
+
+    for (let i = start; i <= end; i++) {
+        sum += i;
     }
 
     return sum;
